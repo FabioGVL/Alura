@@ -6,6 +6,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     "chromeWebSecurity": false,
-    "baseUrl": "https://alura-fotos.herokuapp.com/#/home"
+    "baseUrl": "https://3076-cypress-alurapic-front.vercel.app/#/home"
   },
 });
