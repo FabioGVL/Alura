@@ -1,6 +1,4 @@
-# PROJETO DE AUTOMAÇÃO: ALURA
-
-## 1. OBJETIVO DO DOCUMENTO
+# Escopo do Projeto
 Este documento detalha a estratégia de automação de testes para a plataforma **Alura**. O foco principal é a validação do fluxo de **Cadastro de Usuários**, cobrindo desde o "caminho feliz" com geração de massa dinâmica até validações rigorosas de campos (Regex, limites de caracteres e mensagens de erro do sistema).
 
 ## 2. TECNOLOGIAS UTILIZADAS
