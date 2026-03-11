@@ -11,10 +11,10 @@ Este documento detalha a estratégia de automação de testes para a plataforma 
 ## 3. ARQUITETURA E ESTRUTURA
 O projeto foi desenhado para ser resiliente e de fácil manutenção, utilizando as melhores práticas QA:
 
-* **Custom Commands:** Abstração dos fluxos de `preencherCadastro()` e `fazerLogin()` em `cypress/support/commands.js`, permitindo a reutilização de código em diferentes suítes.
-* **Data Sanitization:** Implementação de lógica de tratamento de strings (Regex) para converter dados randômicos em formatos aceitos pelo sistema (ex: usernames em lowercase e sem caracteres especiais).
-* **Validation Layer:** Uso de asserções negativas para validar mensagens de erro dinâmicas do Angular (ex: *Invalid e-mail*, *Mininum length is 8*).
-* **Environment Variables:** Uso de `Cypress.env` para gerenciar credenciais e parâmetros de teste de forma segura.
+* Abstração dos fluxos de `preencherCadastro()` e `fazerLogin()` em `cypress/support/commands.js`, permitindo a reutilização de código em diferentes suítes.
+* Implementação de lógica de tratamento de strings para converter dados randômicos em formatos aceitos pelo sistema (ex: usernames em lowercase e sem caracteres especiais).
+* Uso de asserções negativas para validar mensagens de erro dinâmicas (ex: *Invalid e-mail*, *Mininum length is 8*).
+* Uso de `Cypress.env` para gerenciar credenciais e parâmetros de teste de forma segura.
 
 ## 4. COMO EXECUTAR O PROJETO
 
