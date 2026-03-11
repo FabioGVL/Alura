@@ -1,7 +1,7 @@
 # Escopo do Projeto
 Este documento detalha a estratégia de automação de testes para a plataforma **Alura**. O foco principal é a validação do fluxo de **Cadastro de Usuários**, cobrindo desde o "caminho feliz" com geração de massa dinâmica até validações rigorosas de campos (Regex, limites de caracteres e mensagens de erro do sistema).
 
-## 1. ARQUITETURA E ESTRUTURA
+## 1. Arquitetura e estrutura
 O projeto foi desenhado para ser resiliente e de fácil manutenção, utilizando as melhores práticas QA:
 
 * Abstração dos fluxos de `preencherCadastro()` e `fazerLogin()` em `cypress/support/commands.js`, permitindo a reutilização de código em diferentes suítes.
