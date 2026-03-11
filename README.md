@@ -27,7 +27,7 @@ O projeto foi desenhado para ser resiliente e de fácil manutenção, utilizando
 * Uso de asserções negativas para validar mensagens de erro dinâmicas (ex: *Invalid e-mail*, *Mininum length is 8*).
 * Uso de `Cypress.env` para gerenciar credenciais e parâmetros de teste de forma segura.
 
-## Ferramentas e ambientes utilizados para execução do projeto:
+## Tecnologias e ambientes utilizados para execução do projeto:
 - Cypress v10.11.0
 - Node JS v20.15.0
 - Google Chrome v126.0.6478.126
@@ -37,7 +37,7 @@ O projeto foi desenhado para ser resiliente e de fácil manutenção, utilizando
 
 ## Passos para reproduzir o teste
 
-### 1 Efetuando o download e descompactando o projeto
+### 1. Efetuando o download e descompactando o projeto
 - No GitHub, clique em "code".
 - Clique em "Download Zip" para fazer o download do arquivo deste teste.
 - No seu computador, localize o download efetuado.
