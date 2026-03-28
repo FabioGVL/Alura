@@ -26,7 +26,7 @@ O projeto foi desenhado para ser resiliente e de fácil manutenção, utilizando
 * Implementação de lógica de tratamento de strings para converter dados randômicos em formatos aceitos pelo sistema (ex: usernames em lowercase e sem caracteres especiais).
 * Uso de asserções negativas para validar mensagens de erro dinâmicas (ex: *Invalid e-mail*, *Mininum length is 8*).
 * Uso de `Cypress.env` para gerenciamento de credenciais e parâmetros de teste. 
-Por questões de segurança, apenas o arquivo env.example é disponibilizado no repositório, demonstrando a estrutura necessária, sem expor dados reais.
+Por questões de segurança, apenas o arquivo `env.example` é disponibilizado no repositório, demonstrando a estrutura necessária, sem expor dados reais.
 
 ## Tecnologias e ambientes utilizados para execução do projeto:
 - Cypress v10.11.0
