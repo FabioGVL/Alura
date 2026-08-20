@@ -1,4 +1,4 @@
-[![Cypress Tests](https://github.com/FabioGVL/Alura-Cypress/actions/workflows/cypress.yml/badge.svg)](https://github.com/FabioGVL/Alura-Cypress/actions/workflows/cypress.yml)
+[![Cypress Tests](https://github.com/FabioGVL/Alura-Cypress/actions/workflows/AluraAutomation.yml/badge.svg)](https://github.com/FabioGVL/Alura-Cypress/actions/workflows/AluraAutomation.yml)
 
 # Automação de Testes E2E - Alura
 
