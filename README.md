@@ -1,60 +1,76 @@
-# Escopo do Projeto
-Este documento detalha a estratégia de automação de testes para a plataforma **Alura**. O foco principal é a validação do fluxo de **Cadastro de Usuários**, cobrindo desde o "caminho feliz" com geração de massa dinâmica até validações rigorosas de campos (Regex, limites de caracteres e mensagens de erro do sistema).
+[![Cypress Tests](https://github.com/FabioGVL/Alura-Cypress/actions/workflows/cypress.yml/badge.svg)](https://github.com/FabioGVL/Alura-Cypress/actions/workflows/cypress.yml)
 
-## ESCOPO DO TESTE
+# Automação de Testes E2E - Alura
 
-### 1. Mapeamento de Features:
-* **Fluxo de Login:** Acesso restrito à plataforma de cursos.
-* **Interface de Dashboard:** Visualização de trilhas e progresso de aprendizado.
+## Escopo do Produto
 
-### 2. Features Testadas:
-* **Autenticação Básica:** Validação de login com sucesso e mensagens de erro para credenciais incorretas.
-* **Navegação Inicial:** Verificação de carregamento de elementos críticos da página pós-login.
+A plataforma **Alura** é um ambiente de ensino online voltado para tecnologia. O sistema simula a jornada do usuário desde o cadastro e autenticação até a navegação pelas trilhas de aprendizado e dashboard, garantindo a estabilidade e a experiência correta no fluxo educacional.
 
-### 3. Massa de Dados para Teste:
-* **Cenários de Teste:** Uso de dados estáticos para validação de campos obrigatórios e comportamentos de interface.
+## Escopo do Teste
 
-### 4. Tipos de Testes Utilizados:
-* **Testes de Funcionalidade:** Verificar se as funcionalidades básicas do sistema estão operando conforme o esperado.
-* **Testes de Usabilidade:** Avaliar a facilidade de navegação e clareza das instruções em tela.
-* **Testes de Integração:** Garantir que as partes do sistema (Login e Home) se conectem sem erros.
+A estratégia foca em garantir a funcionalidade correta e a integridade dos fluxos principais da plataforma, simulando o comportamento de um usuário real e validando rigorosamente as regras de negócio e os limites de entrada.
 
-## Arquitetura e estrutura
-O projeto foi desenhado para ser resiliente e de fácil manutenção, utilizando as melhores práticas QA:
+- **Mapeamento de Features:** Autenticação (Login/Cadastro) e Interface de Dashboard.
+- **Features Testadas:** Fluxos críticos como cadastro de usuários (caminho feliz e validação de formato de e-mail via Regex, limites de caracteres e mensagens de erro dinâmicas do sistema como *Invalid e-mail* e *Minimum length*), além de autenticação com sucesso/falha e verificação de elementos de interface pós-login.
+- **Massa de Dados:** Abordagem utilizando dados estáticos para validação de campos obrigatórios e dados gerados dinamicamente via biblioteca auxiliar (`Faker-br`), com lógica de tratamento de strings para conversão em formatos aceitos pelo sistema.
+- **Tipos de Testes:**
+  - **Testes E2E (End-to-End):** Validação funcional dos fluxos de ponta a ponta que percorrem a aplicação, abrangendo jornadas críticas como o ciclo completo de cadastro de novos usuários e o fluxo de autenticação e navegação na dashboard.
+  - **Testes de Integração:** Validação da comunicação e comportamento conjunto entre a interface de usuário (UI) e os componentes de validação de regras de negócio, asserções negativas para mensagens de erro dinâmicas e o gerenciamento de parâmetros de ambiente (`Cypress.env`).
 
-* Abstração dos fluxos de `preencherCadastro()` e `fazerLogin()` em `cypress/support/commands.js`, permitindo a reutilização de código em diferentes suítes.
-* Implementação de lógica de tratamento de strings para converter dados randômicos em formatos aceitos pelo sistema (ex: usernames em lowercase e sem caracteres especiais).
-* Uso de asserções negativas para validar mensagens de erro dinâmicas (ex: *Invalid e-mail*, *Mininum length is 8*).
-* Uso de `Cypress.env` para gerenciamento de credenciais e parâmetros de teste. 
-Por questões de segurança, apenas o arquivo `env.example` é disponibilizado no repositório, demonstrando a estrutura necessária, sem expor dados reais.
+## Arquitetura e Estrutura
 
-## Tecnologias e ambientes utilizados para execução do projeto:
-- Cypress v10.11.0
-- Node JS v20.15.0
-- Google Chrome v126.0.6478.126
-- Windows 11 v23H2
-- Biblioteca de massa de dados: [Faker-br](https://www.npmjs.com/package/faker-br)
-- GIT
+O projeto foi organizado para garantir a separação entre a lógica de teste e a configuração das requisições, facilitando a manutenção e a escalabilidade.
 
-## Passos para reproduzir o teste
+- **Padrão de Projeto:** Abstração de comandos customizados em `cypress/support/commands.js` (`preencherCadastro()` e `fazerLogin()`) para reutilização de código, além do uso de `Cypress.env` para gerenciamento centralizado de parâmetros e credenciais de ambiente.
+- **Tecnologias e Ambiente:** `Cypress` | `JavaScript (ES6+)` | `Node.js` | `Git` | `Windows 11` | `Chrome` | `Faker-br`
 
-### 1. Efetuando o download e descompactando o projeto
-- No GitHub, clique em "code".
-- Clique em "Download Zip" para fazer o download do arquivo deste teste.
-- No seu computador, localize o download efetuado.
-- Descompacte o arquivo.
+## Passos para Configurar e Reproduzir o Projeto
 
-### 1.2 Configurando o projeto no VSCode e executando o teste
-- Abra o VSCode.
-- Clique em `Arquivo/File`.
-- Clique em `Abrir pasta/Open folder`.
-- Escolha a pasta do arquivo descompactado (`Alura-master`).
-- Após o projeto ser aberto no VSCode, navegue até `Cypress > E2E`.
-- Os testes estarão dentro das pastas `UI`.
-- No terminal do Cypress digite `npx cypress open`. Caso necessário, instale o Cypress através do comando `npm install cypress`.
-- Aguarde o Cypress abrir.
-- Selecione a opção `E2E Testing`.
-- Na próxima página selecione o navegador desejado.
-- Na próxima página selecione o teste que deseja executar e a automação será executada.
-- Também é possível executar o teste através do comando `npx cypress run`. O teste rodará dentro do próprio VSCode e serão gerados vídeos dos resultados dos testes. Os vídeos ficarão armazenados no destino `Cypress > Vídeos`.
+## Pré-requisitos
+Certifique-se de possuir as seguintes ferramentas instaladas em seu ambiente:
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (versão 20.15.0 ou superior recomendada)
+* Um editor de código de sua preferência (ex: [VS Code](https://code.visualstudio.com/))
 
+### Clonando ou baixando o projeto
+
+No GitHub, clique em **Code** e faça o download do arquivo ZIP, ou clone o repositório via terminal:
+
+```bash
+git clone https://github.com/FabioGVL/Alura-Cypress.git
+```
+
+Extraia os arquivos (caso tenha baixado em ZIP) e abra a pasta do projeto no VS Code.
+
+### Instalando as dependências e executando os testes
+
+No terminal integrado do VS Code, instale as dependências do projeto:
+
+```bash
+npm install
+```
+
+Para abrir a interface gráfica interativa do Cypress:
+
+```bash
+npx cypress open
+```
+
+> Na janela do Cypress, selecione **E2E Testing**, escolha o navegador desejado e clique no teste que deseja executar.
+
+Para executar os testes em modo headless (linha de comando):
+
+```bash
+npx cypress run
+```
+
+> Os vídeos dos resultados dos testes ficarão salvos automaticamente no diretório `cypress/videos`.
+
+## Resumo dos Comandos
+
+| Objetivo | Comando |
+| :--- | :--- |
+| **Instalar dependências** | `npm install` |
+| **Abrir interface gráfica (UI Mode)** | `npx cypress open` |
+| **Executar testes em modo Headless** | `npx cypress run` |
+| **Executar testes em navegador específico** | `npx cypress run --browser chrome` |
