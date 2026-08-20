@@ -24,7 +24,13 @@ O projeto foi organizado para garantir a separação entre a lógica de teste e 
 - **Padrão de Projeto:** Abstração de comandos customizados em `cypress/support/commands.js` (`preencherCadastro()` e `fazerLogin()`) para reutilização de código, além do uso de `Cypress.env` para gerenciamento centralizado de parâmetros e credenciais de ambiente.
 - **Tecnologias e Ambiente:** `Cypress` | `JavaScript (ES6+)` | `Node.js` | `Git` | `Windows 11` | `Chrome` | `Faker-br`
 
+---
+
 ## Passos para Configurar e Reproduzir o Projeto
+
+Siga o guia abaixo para clonar, configurar o ambiente e executar a suíte de testes automatizados em sua máquina local.
+
+---
 
 ## Pré-requisitos
 Certifique-se de possuir as seguintes ferramentas instaladas em seu ambiente:
@@ -32,15 +38,36 @@ Certifique-se de possuir as seguintes ferramentas instaladas em seu ambiente:
 * [Node.js](https://nodejs.org/) (versão 20.15.0 ou superior recomendada)
 * Um editor de código de sua preferência (ex: [VS Code](https://code.visualstudio.com/))
 
-### Clonando ou baixando o projeto
+--- 
 
-No GitHub, clique em **Code** e faça o download do arquivo ZIP, ou clone o repositório via terminal:
+## Obtendo o Código do Projeto
+
+Você pode obter os arquivos do projeto de duas formas.
+
+### Opção A: Clonando via Git (Recomendado)
+
+Abra o terminal e execute o comando abaixo para clonar o repositório:
 
 ```bash
 git clone https://github.com/FabioGVL/Alura-Cypress.git
 ```
 
-Extraia os arquivos (caso tenha baixado em ZIP) e abra a pasta do projeto no VS Code.
+Em seguida, navegue para dentro da pasta do projeto:
+
+```bash
+cd Alura-Cypress
+```
+
+### Opção B: Baixando via ZIP
+
+1. Acesse a página do repositório no GitHub.
+2. Clique no botão verde **Code**.
+3. Selecione **Download ZIP**.
+4. Extraia o conteúdo do arquivo compactado em uma pasta no seu computador.
+5. Abra o VS Code.
+6. Acesse **Arquivo > Abrir Pasta** e selecione a pasta descompactada.
+
+---
 
 ### Instalando as dependências e executando os testes
 
@@ -56,7 +83,7 @@ Para abrir a interface gráfica interativa do Cypress:
 npx cypress open
 ```
 
-> Na janela do Cypress, selecione **E2E Testing**, escolha o navegador desejado e clique no teste que deseja executar.
+Na janela do Cypress, selecione **E2E Testing**, escolha o navegador desejado e clique no teste que deseja executar.
 
 Para executar os testes em modo headless (linha de comando):
 
@@ -64,7 +91,7 @@ Para executar os testes em modo headless (linha de comando):
 npx cypress run
 ```
 
-> Os vídeos dos resultados dos testes ficarão salvos automaticamente no diretório `cypress/videos`.
+Os vídeos dos resultados dos testes ficarão salvos automaticamente no diretório `cypress/videos`.
 
 ## Resumo dos Comandos
 
