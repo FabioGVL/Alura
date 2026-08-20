@@ -1,4 +1,4 @@
-name: End-to-End Tests
+name: AluraAutomation
 on:
   push:
     branches: [ "main" ]
